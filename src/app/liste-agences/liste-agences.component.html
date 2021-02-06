@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 style="margin: auto">Liste des Agences</h2>
+    <a routerLink="./agences/agences.component"><button class="btn">Ajouter un noveau</button></a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="hidden">Numero</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Telephone/th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let agence of agences; let i=index">
+                <td class="hidden">{{ index }}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button class="btn btn-success" (click)="deleteAgence()">Supprimer</button>
+                    <button class="btn btn-success" (click)="editAgence()" style="margin-left: 20px;">Modifier</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

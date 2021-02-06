@@ -1,0 +1,36 @@
+<div class="col-md-6 user-container">
+
+    <h2 class="text-center">Ajout des Utilisateurs</h2>
+
+    <form [formGroup]="addUsersForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="firstName">Nom:</label>
+            <input type="text" formControlName="firstName" class="form-control" id="firstName"
+             [ngClass]="{'is-invalid': submitted && addUsersForm.controls.firstName.errors, 'is-valid': submitted &&  !addUsersForm.controls.firstName.errors}">
+             <div *ngIf="submitted && addUsersForm.controls.firstName.errors" class="invalid-feedback d-block">
+                <div *ngIf="addUsersForm.controls.firstName.errors.required">First name is required</div>
+                <div *ngIf="addUsersForm.controls.firstName.errors.email">First name is moinlmeng</div>
+            </div>  
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Prenom:</label>
+            <input type="text" formControlName="lastName" name="lastName" class="form-control is-valid"
+                id="lastName">
+        </div>
+
+        <div class="form-group">
+            <label for="username">Nom d'utilisateur:</label>
+            <input type="text" formControlName="username" name="username" class="form-control"
+                id="username">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Mot de passe:</label>
+            <input type="password" formControlName="password" name="password" class="form-control"
+                id="password">
+        </div>
+
+        <button class="btn btn-success">Enregistrer</button>
+    </form>
+</div>

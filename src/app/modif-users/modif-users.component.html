@@ -1,0 +1,32 @@
+<div class="col-md-6 user-container">
+
+    <h2 class="text-center">Modification Utilisateur</h2>
+
+    <form [formGroup]="editUsersForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="firstName">Nom:</label>
+            <input type="text" formControlName="firstName" name="firstName" class="form-control"
+                id="firstName">
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Prenom:</label>
+            <input type="text" formControlName="lastName" name="lastName" class="form-control"
+                id="lastName">
+        </div>
+
+        <div class="form-group">
+            <label for="username">Nom d'utilisateur:</label>
+            <input type="text" formControlName="username" name="username" class="form-control"
+                id="username">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Mot de passe:</label>
+            <input type="password" formControlName="password" name="password" class="form-control"
+                id="password">
+        </div>
+
+        <button class="btn btn-success">Enregistrer</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+    <h2 style="margin: auto">Liste des utilisateurs</h2>
+    <a routerLink="/users" class="btn btn-success">Ajouter un noveau</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="hidden">Num</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Nom d'utilisateur</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users; let i=index">
+                <td class="hidden">{{ i }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.username }}</td>
+                <td>
+                <!-- ajout de la routerLink et l'index -->
+                <a [routerLink]="['/modif-users',i]" class="btn btn-success">Modifier</a>
+                <button class="btn btn-danger" (click)="deleteUser(index)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
