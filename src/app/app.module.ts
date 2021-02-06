@@ -13,6 +13,7 @@ import { ListeAgencesComponent } from './liste-agences/liste-agences.component';
 import { AjoutModifAgencesComponent } from './ajout-modif-agences/ajout-modif-agences.component';
 import { P404Component } from './p404/p404.component';
 import { ModifUsersComponent } from './modif-users/modif-users.component';
+import { ExemplFormArrayComponent } from './exempl-form-array/exempl-form-array.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ModifUsersComponent } from './modif-users/modif-users.component';
     ListeAgencesComponent,
     AjoutModifAgencesComponent,
     P404Component,
-    ModifUsersComponent
+    ModifUsersComponent,
+    ExemplFormArrayComponent
   ],
   imports: [
     BrowserModule,

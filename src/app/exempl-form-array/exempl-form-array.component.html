@@ -1,0 +1,62 @@
+<div class="col-md-6 user-container">
+
+    <h2 class="text-center">Exemple du FormArray</h2>
+
+    <form [formGroup]="skillsForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="firstName">FirstName:</label>
+            <input type="text" formControlName="firstName" class="form-control" id="firstName"
+            [ngClass]="{'is-invalid': submitted && skillsForm.controls.firstName.errors, 'is-valid': submitted &&  !skillsForm.controls.firstName.errors}">
+            <div *ngIf="submitted && skillsForm.controls.firstName.errors" class="invalid-feedback d-block">
+               <div *ngIf="skillsForm.controls.firstName.errors.required">First name is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">LastName:</label>
+            <input type="text" formControlName="lastName" class="form-control" id="lastName"
+            [ngClass]="{'is-invalid': submitted && skillsForm.controls.lastName.errors, 'is-valid': submitted &&  !skillsForm.controls.lastName.errors}">
+            <div *ngIf="submitted && skillsForm.controls.lastName.errors" class="invalid-feedback d-block">
+               <div *ngIf="skillsForm.controls.lastName.errors.required">Last name is required</div>
+           </div>  
+        </div>
+
+        <div>
+            <button type="button" (click)="addSkills()">Add</button>
+        </div>
+
+        <div formArrayName="skills">
+            <div *ngFor="let skill of skills.controls; let i=index">
+                <div [formGroupName]="i">
+                    {{i}}
+                    skill name : <!-- skill est un formGroup dans le formGroup skillsForm dc je dois mettre leur nom -->
+                    <input type="text" formControlName="skill" class="form-control" id="skill"
+                    [ngClass]="{'is-invalid': submitted && skill.controls.skill.errors, 'is-valid': submitted &&  !skill.controls.skill.errors}">
+                    <div *ngIf="submitted && skill.controls.skill.errors" class="invalid-feedback d-block">
+                       <div *ngIf="skill.controls.skill.errors.required">skill is required</div>
+                   </div>  
+                    experience:   
+                    <input type="text" formControlName="exp" class="form-control" id="exp"
+                    [ngClass]="{'is-invalid': submitted && skill.controls.exp.errors, 'is-valid': submitted &&  !skill.controls.exp.errors}">
+                    <div *ngIf="submitted && skill.controls.exp.errors" class="invalid-feedback d-block">
+                       <div *ngIf="skill.controls.exp.errors.required">experience is required</div>
+                   </div>  
+
+                    <button (click)="removeSkill(i)">Remove</button>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+
+   
+
+    <!-- {{this.skillsForm.value | json}} -->
+
+
+</div>

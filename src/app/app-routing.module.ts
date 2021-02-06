@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AgencesComponent } from './agences/agences.component';
 import { AjoutModifAgencesComponent } from './ajout-modif-agences/ajout-modif-agences.component';
+import { ExemplFormArrayComponent } from './exempl-form-array/exempl-form-array.component';
 import { ListeAgencesComponent } from './liste-agences/liste-agences.component';
 import { ListeUsersComponent } from './liste-users/liste-users.component';
 import { LoginComponent } from './login/login.component';
 import { ModifUsersComponent } from './modif-users/modif-users.component';
 import { P404Component } from './p404/p404.component';
 import { UsersComponent } from './users/users.component';
-
 
 const routes: Routes = [
   {
@@ -43,6 +43,10 @@ const routes: Routes = [
   {
     path:'ajout-modif-agences',
     component: AjoutModifAgencesComponent
+  },
+  {
+    path:'exempl-form-array',
+    component: ExemplFormArrayComponent
   },
   {
     path:'**',
