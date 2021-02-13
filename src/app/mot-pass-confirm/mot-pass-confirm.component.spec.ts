@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AjoutModifAgencesComponent } from './ajout-modif-agences.component';
+import { MotPassConfirmComponent } from './mot-pass-confirm.component';
 
-describe('AjoutModifAgencesComponent', () => {
-  let component: AjoutModifAgencesComponent;
-  let fixture: ComponentFixture<AjoutModifAgencesComponent>;
+describe('MotPassConfirmComponent', () => {
+  let component: MotPassConfirmComponent;
+  let fixture: ComponentFixture<MotPassConfirmComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AjoutModifAgencesComponent ]
+      declarations: [ MotPassConfirmComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AjoutModifAgencesComponent);
+    fixture = TestBed.createComponent(MotPassConfirmComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

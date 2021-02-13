@@ -1,0 +1,36 @@
+<form [formGroup]="registerForm">
+
+    <div class="form-group">
+        <label for="mail">Email:</label>
+        <input type="text" class="form-control" formControlName="email" id="mail"
+        [ngClass]="{'is-invalid': submitted && registerForm.get('email').errors}">
+        <div class="d-block invalid-feedback">
+            <div class="error" *ngIf="submitted  && registerForm.controls['email'].hasError('required')">
+                email required </div>
+        </div>
+    </div>
+    ​
+    <div class="form-group">
+        <label for="pwd">password:</label>
+        <input type="password" class="form-control" formControlName="password" id="pwd" 
+        [ngClass]="{'is-invalid': submitted && registerForm.get('password').errors}">
+        <div class="d-block invalid-feedback">
+            <div class="error" *ngIf="submitted  && registerForm.controls['password'].hasError('required')">
+                password required </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="confPwd">Confirm password:</label>
+        <input type="password" class="form-control" formControlName="confirmPassword" id="confPwd" 
+        [ngClass]="{'is-invalid': submitted && registerForm.get('confirmPassword').errors}" >
+        <div class="d-block invalid-feedback">
+        <div class="error" *ngIf="submitted  && registerForm.controls['confirmPassword'].hasError('required')">
+            password confirmation is required </div>
+        <div class="error" *ngif="submitted && registerForm.hasError('notSame')">
+            Confirm password do not match. </div>
+    </div>
+</div>
+
+    <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+</form>
