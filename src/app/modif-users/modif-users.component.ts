@@ -38,6 +38,7 @@ export class ModifUsersComponent implements OnInit {
     this.users.splice(this.index, 1, utilisateur);
 
     localStorage.setItem('users', JSON.stringify(this.users));
+    // retourne a la page d'affichage de liste
     this.router.navigateByUrl('liste-users');
   }  
   }

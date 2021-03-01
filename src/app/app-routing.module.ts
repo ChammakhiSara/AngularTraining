@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AgencesComponent } from './agences/agences.component';
 import { ExemplFormArrayComponent } from './exempl-form-array/exempl-form-array.component';
+import { FirstUseServiceComponent } from './first-use-service/first-use-service.component';
 import { ListeAgencesComponent } from './liste-agences/liste-agences.component';
 import { ListeUsersComponent } from './liste-users/liste-users.component';
 import { LoginComponent } from './login/login.component';
 import { ModifUsersComponent } from './modif-users/modif-users.component';
 import { MotPassConfirmComponent } from './mot-pass-confirm/mot-pass-confirm.component';
-import { P404Component } from './p404/p404.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
@@ -49,9 +49,9 @@ const routes: Routes = [
     component: MotPassConfirmComponent
   },
   {
-    path:'**',
-    component: P404Component
-  }
+    path: 'first-use-service',
+    component: FirstUseServiceComponent
+  },
 ];
 
 @NgModule({

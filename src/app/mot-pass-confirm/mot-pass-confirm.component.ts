@@ -25,7 +25,7 @@ export class MotPassConfirmComponent implements OnInit {
     });
   }
   onSubmit() { 
-    console.log(this.registerForm.controls['confirmPassword'].hasError('notSame'));
+    console.log(this.registerForm.hasError('notSame'));
     
     this.submitted = true;
     console.log(this.registerForm.value);
